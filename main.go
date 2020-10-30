@@ -28,7 +28,7 @@ import (
 	"zxq.co/ripple/hanayo/routers/pagemappings"
 	"zxq.co/ripple/hanayo/services"
 	"zxq.co/ripple/hanayo/services/cieca"
-	"zxq.co/ripple/schiavolib"
+	schiavo "zxq.co/ripple/schiavolib"
 	"zxq.co/x/rs"
 )
 
@@ -52,6 +52,7 @@ var (
 
 		MainRippleFolder string `description:"Folder where all the non-go projects are contained, such as old-frontend, lets, ci-system. Used for changelog."`
 		AvatarsFolder    string `description:"location folder of avatars, used for placing the avatars from the avatar change page."`
+		VarnishURL       string
 
 		CookieSecret string
 
@@ -74,10 +75,12 @@ var (
 		RecaptchaSite    string
 		RecaptchaPrivate string
 
-		DiscordOAuthID     string
-		DiscordOAuthSecret string
-		DonorBotURL        string
+		DiscordOAuthID     string `description:"Deprecated, leave empty"`
+		DiscordOAuthSecret string `description:"Deprecated, leave empty"`
+		DonorBotURL        string `description:"Deprecated, leave empty"`
 		DonorBotSecret     string
+
+		OldFrontend string `description:"Used for new DonorBot"`
 
 		CoinbaseAPIKey    string
 		CoinbaseAPISecret string
@@ -85,6 +88,8 @@ var (
 		SentryDSN string
 
 		IP_API string
+
+		FathomID string
 	}
 	configMap map[string]interface{}
 	db        *sqlx.DB
@@ -307,7 +312,9 @@ func generateEngine() *gin.Engine {
 	r.POST("/settings/avatar", avatarSubmit)
 	r.POST("/settings/2fa/disable", disable2fa)
 	r.POST("/settings/2fa/totp", totpSetup)
-	r.GET("/settings/discord/finish", discordFinish)
+	r.POST("/settings/discord", discordSubmit)
+	r.GET("/settings/discord/finish", discordLinkFinish)
+	r.GET("/settings/discord/unlink", discordUnlink)
 	r.POST("/settings/profbackground/:type", profBackground)
 
 	r.POST("/dev/tokens/create", createAPIToken)

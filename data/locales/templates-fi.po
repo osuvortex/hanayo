@@ -764,7 +764,7 @@ msgstr "Ilmainen osu-direct."
 msgid "Global leaderboards."
 msgstr "Maailmanlaajuiset sijoitukset."
 
-msgid "and PP for all game modes"
+msgid "and PP for all game modes, including Relax and Autopilot!"
 msgstr ""
 
 msgid "Ranking queue for unranked beatmaps."
@@ -1334,17 +1334,7 @@ msgstr "Avaa tiedosto"
 msgid "Save"
 msgstr "Tallenna"
 
-msgid ""
-"Your discord account has been linked to this Ripple account. <b>Welcome to "
-"the donors club and thank you for supporting us!</b> You have now access to "
-"the #donators text and voice channels on our official Discord server! You "
-"can also set a custom role name and username colour and change your nickname "
-"on Discord. If you want to change your nickname, you can use the "
-"<code>/nick</code> command. To set or edit your <b>custom role</b> name and "
-"colour, use the command <code>!role HEX_COLOUR ROLE_NAME</code>. You can "
-"pick your HEX colour <a href=\"http://www.colorpicker.com/\" target=\""
-"_blank\">here</a>, it's the one that starts with '#'. You can change your "
-"role name and colour <b>whenever you want!</b>"
+msgid "Your discord account has been linked to this Ripple account. <b>Welcome to the donors club and thank you for supporting us!</b> You have now access to the #donators text and voice channels on our official Discord server! You can also set a custom role name and username colour and change your nickname on Discord."
 msgstr ""
 
 msgid "Thank you for supporting us and have fun on Ripple!"
@@ -1759,9 +1749,6 @@ msgid ""
 "really trust the owner of the application.</b>"
 msgstr ""
 
-msgid "and PP for osu!standard and osu!mania"
-msgstr "ja PP osu!standardiin ja osu!maniaan"
-
 # help.html
 msgid ""
 "If you need to get in touch with our support team (our Community Managers), "
@@ -1853,4 +1840,95 @@ msgid "At least 66% Completion for 7+ Minute songs, anything else completely map
 msgstr ""
 
 msgid "Popularity does not mean rankable"
+msgstr ""
+
+msgid "Community"
+msgstr ""
+
+msgid "Multiplayer listing"
+msgstr ""
+
+msgid "Discord Server"
+msgstr ""
+
+msgid "Read more"
+msgstr ""
+
+msgid "Connection guide"
+msgstr ""
+
+msgid "Classic"
+msgstr ""
+
+msgid "Relax"
+msgstr ""
+
+msgid "New!"
+msgstr ""
+
+msgid "Total Play Time"
+msgstr ""
+
+msgid "<b>We have changed our custom badge system.</b> You can now use emojis as icons! Check it out!"
+msgstr ""
+
+msgid "Pick an emoji"
+msgstr ""
+
+msgid "In-game settings"
+msgstr ""
+
+msgid "Submode"
+msgstr ""
+
+msgid "In-game beatmap scoreboards display"
+msgstr ""
+
+msgid "You can also change this setting in-game with '!relax' and '!classic'"
+msgstr ""
+
+msgid "display and order by"
+msgstr ""
+
+msgid "You can also change this setting in-game with '!display classic pp' and '!display classic score'"
+msgstr ""
+
+msgid "You can also change this setting in-game with '!display relax pp' and '!display relax score'"
+msgstr ""
+
+msgid "Overwrite classic mode scores prioritizing..."
+msgstr ""
+
+msgid "The settings this section apply to only classic mode. Relax mode always prioritizes PP. Changing these setting is not retroactive."
+msgstr ""
+
+msgid "default"
+msgstr ""
+
+msgid "Auto !last"
+msgstr ""
+
+# On/off
+msgid "Off"
+msgstr ""
+
+msgid "Chat message"
+msgstr ""
+
+msgid "Notification"
+msgstr ""
+
+msgid "Custom role name"
+msgstr ""
+
+msgid "Colour"
+msgstr ""
+
+msgid "Donor"
+msgstr ""
+
+msgid "This feature is available only to donors"
+msgstr ""
+
+msgid "<a href='/donate'>Purchase donor</a> to support us and unlock this feature, and many more!"
 msgstr ""

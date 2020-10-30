@@ -755,7 +755,7 @@ msgstr "Бесплатный osu!direct."
 msgid "Global leaderboards."
 msgstr "Глобальная таблица лидеров."
 
-msgid "and PP for all game modes"
+msgid "and PP for all game modes, including Relax and Autopilot!"
 msgstr ""
 
 msgid "Ranking queue for unranked beatmaps."
@@ -1803,9 +1803,6 @@ msgstr ""
 "этой страницы - будьте осторожны и создавайте токен, только если вы "
 "доверяете владельцу приложения.</b>"
 
-msgid "and PP for osu!standard and osu!mania"
-msgstr "и PP для режимов osu!standard и osu!mania"
-
 # help.html
 msgid ""
 "If you need to get in touch with our support team (our Community Managers), "
@@ -1896,4 +1893,95 @@ msgid "At least 66% Completion for 7+ Minute songs, anything else completely map
 msgstr ""
 
 msgid "Popularity does not mean rankable"
+msgstr ""
+
+msgid "Community"
+msgstr ""
+
+msgid "Multiplayer listing"
+msgstr ""
+
+msgid "Discord Server"
+msgstr ""
+
+msgid "Read more"
+msgstr ""
+
+msgid "Connection guide"
+msgstr ""
+
+msgid "Classic"
+msgstr ""
+
+msgid "Relax"
+msgstr ""
+
+msgid "New!"
+msgstr ""
+
+msgid "Total Play Time"
+msgstr ""
+
+msgid "<b>We have changed our custom badge system.</b> You can now use emojis as icons! Check it out!"
+msgstr ""
+
+msgid "Pick an emoji"
+msgstr ""
+
+msgid "In-game settings"
+msgstr ""
+
+msgid "Submode"
+msgstr ""
+
+msgid "In-game beatmap scoreboards display"
+msgstr ""
+
+msgid "You can also change this setting in-game with '!relax' and '!classic'"
+msgstr ""
+
+msgid "display and order by"
+msgstr ""
+
+msgid "You can also change this setting in-game with '!display classic pp' and '!display classic score'"
+msgstr ""
+
+msgid "You can also change this setting in-game with '!display relax pp' and '!display relax score'"
+msgstr ""
+
+msgid "Overwrite classic mode scores prioritizing..."
+msgstr ""
+
+msgid "The settings this section apply to only classic mode. Relax mode always prioritizes PP. Changing these setting is not retroactive."
+msgstr ""
+
+msgid "default"
+msgstr ""
+
+msgid "Auto !last"
+msgstr ""
+
+# On/off
+msgid "Off"
+msgstr ""
+
+msgid "Chat message"
+msgstr ""
+
+msgid "Notification"
+msgstr ""
+
+msgid "Custom role name"
+msgstr ""
+
+msgid "Colour"
+msgstr ""
+
+msgid "Donor"
+msgstr ""
+
+msgid "This feature is available only to donors"
+msgstr ""
+
+msgid "<a href='/donate'>Purchase donor</a> to support us and unlock this feature, and many more!"
 msgstr ""

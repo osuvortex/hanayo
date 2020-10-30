@@ -31,6 +31,14 @@
 		<link rel="stylesheet" type="text/css" href="/static/{{ if $ds }}dark/{{ end }}semantic.min.css?{{ unixNano }}">
 		<link rel="stylesheet" type="text/css" href="/static/ripple.css?{{ unixNano }}">
 		<link rel="stylesheet" type="text/css" href="/static/snow/snow.css?{{ unixNano }}">
+		<link rel="stylesheet" type="text/css" href="/static/jquery.lsxemojipicker.css?{{ unixNano }}">
+		{{ if and .DisableHH .KyutGrill }}
+		<style>
+			#fivehead::before {
+				background-image: url('{{ if .KyutGrillAbsolute }}{{ .KyutGrill }}{{ else }}/static/headers/{{ .KyutGrill }}{{ end }}');
+			}
+		</style>
+		{{ end }}
 	</head>
 	<body {{ if $ds }} class="ds"{{ end }}>
 		{{/*
@@ -40,7 +48,7 @@
 		*/}}
 		<div class="ui full height main wrapper"
 			{{ if and .DisableHH .KyutGrill }}
-				style="background-image: url('{{ if .KyutGrillAbsolute }}{{ .KyutGrill }}{{ else }}/static/headers/{{ .KyutGrill }}{{ end }}');"
+				id="fivehead"
 			{{ else if .SolidColour }}
 				style="background-color: {{ .SolidColour }}"
 			{{ end }}>
@@ -53,10 +61,10 @@
 							<div>
 								<div class="snow large"></div>
 								<div class="snow large delayed"></div>
-								
+
 								<div class="snow medium"></div>
 								<div class="snow medium delayed"></div>
-								
+
 								<div class="snow small"></div>
 								<div class="snow small delayed"></div>
 							</div>
@@ -106,7 +114,7 @@
 
 		</div>
 
-		<div class="footer">
+		<div class="footer {{ if $ds }}dark{{ end }}">
 			{{ .T "&copy; 2015-%d Ripple, using Hanayo %s." (curryear) (version) | html }}
 			<a href="/team" title="{{ .T "Who is working on this thing?" }}"><i class="users icon"></i>{{ .T "Team" }}</a> |
 			<a href="https://docs.ripple.moe" title="59 6f 75 27 72 65 20 73 6f 20 31 33 33 37 2e"><i class="wrench icon"></i>{{ .T "Developer docs" }}</a> |
@@ -141,6 +149,7 @@
 				language:  {{ with $lang }}{{ . }}{{ else }}"en"{{ end }},
 			};
 			var currentUserID = {{ .Context.User.ID }};
+			var avatarsVersion = {{ .Context.AvatarsVersion }};
 		</script>
 		{{/* If we got some more scripts to print, print'em */}}
 		<script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.2"></script>
@@ -154,5 +163,23 @@
 			{{ end }}
 		{{ end }}
 	</body>
+
+	{{ with .Conf.FathomID }}
+		<script>
+			if (navigator.doNotTrack !== "1") {
+				(function(f, a, t, h, o, m){
+					a[h]=a[h]||function(){
+						(a[h].q=a[h].q||[]).push(arguments)
+					};
+					o=f.createElement('script'),
+					m=f.getElementsByTagName('script')[0];
+					o.async=1; o.src=t; o.id='fathom-script';
+					m.parentNode.insertBefore(o,m)
+				})(document, window, '//tics.ripple.moe/tracker.js', 'fathom');
+				fathom('set', 'siteId', '{{ . }}');
+				fathom('trackPageview');
+			}
+		</script>
+	{{ end }}
 </html>
 {{ end }}

@@ -688,7 +688,7 @@ msgstr "download (senza video)"
 
 # 2fa_gateway.html
 msgid "Two Factor Authentication"
-msgstr "Verifica in Due Passaggi"
+msgstr "Verifica in due passaggi"
 
 msgid ""
 "Before proceding further on Ripple, we require you to use your Google "
@@ -1277,7 +1277,7 @@ msgid ""
 "To enable Telegram Two Factor Authentication, click this button, then click "
 "\"start\" on Telegram:"
 msgstr ""
-"Per abilitare la Verifica in Due Passaggi con Telegram, clicca questo "
+"Per abilitare la verifica in due passaggi con Telegram, clicca questo "
 "pulsante, quindi premi \"avvia\" su Telegram:"
 
 msgid "Enable Telegram 2FA"
@@ -1308,7 +1308,7 @@ msgid ""
 "At the moment you currently have set up Telegram Two Factor Authentication. "
 "Should you wish to disable it, please fill out the following form:"
 msgstr ""
-"Al momento hai abilitato la Verifica in Due Passaggi con Telegram. Se "
+"Al momento hai abilitato la verifica in due passaggi con Telegram. Se "
 "desideri disabilitarla, completa questo modulo:"
 
 msgid ""
@@ -1316,7 +1316,7 @@ msgid ""
 "Two Factor Authentication. Should you wish to disable it, please fill out "
 "the following form:"
 msgstr ""
-"Al momento hai abilitato la Verifica in Due Passaggi con Google "
+"Al momento hai abilitato la verifica in due passaggi con Google "
 "Authenticator (TOTP). Se desideri disabilitarla, completa questo modulo:"
 
 msgid "Disable Telegram 2FA"
@@ -1345,29 +1345,8 @@ msgstr "Apri file"
 msgid "Save"
 msgstr "Salva"
 
-msgid ""
-"Your discord account has been linked to this Ripple account. <b>Welcome to "
-"the donors club and thank you for supporting us!</b> You have now access to "
-"the #donators text and voice channels on our official Discord server! You "
-"can also set a custom role name and username colour and change your nickname "
-"on Discord. If you want to change your nickname, you can use the "
-"<code>/nick</code> command. To set or edit your <b>custom role</b> name and "
-"colour, use the command <code>!role HEX_COLOUR ROLE_NAME</code>. You can "
-"pick your HEX colour <a href=\"http://www.colorpicker.com/\" target=\""
-"_blank\">here</a>, it's the one that starts with '#'. You can change your "
-"role name and colour <b>whenever you want!</b>"
-msgstr ""
-"Il tuo account di Discord è stato collegato a questo account di Ripple. <b>"
-"Benvenuto nel club dei donatori e grazie per il tuo aiuto!</b> Ora hai "
-"accesso ai canali testuali e vocali #donators sul nostro server di Discord "
-"ufficiale! Puoi anche impostare un role (con anche colore) personalizzato e "
-"cambiare il tuo nickname su Discord. Se lo vuoi cambiare, puoi usare il "
-"comando <code>/nick</code>. Per cambiare o impostare il nome e il colore del "
-"tuo <b>role personalizzato</b>, usa il comando <code>!role "
-"COLORE_ESADECIMALE NOME_RUOLO</code>. Puoi scegliere un colore esadecimale <"
-"a href=\"http://www.colorpicker.com/\" target=\"_blank\">qui</a>, è quello "
-"che comincia per '#'. Puoi cambiare il nome e il colore del tuo role <b>"
-"quando vuoi!</b>"
+msgid "Your discord account has been linked to this Ripple account. <b>Welcome to the donors club and thank you for supporting us!</b> You have now access to the #donators text and voice channels on our official Discord server! You can also set a custom role name and username colour and change your nickname on Discord."
+msgstr "Il tuo account discord è stato collegato a questo account Ripple. <b>Benvenuto nel club dei donatori e grazie per il tuo supporto!</b> Ora hai accesso al canale testuale e vocale #donators nel nostro server Discord ufficiale! Puoi anche impostare un ruolo personalizzato e un colore del tuo username e cambiare il tuo username su Discord."
 
 msgid "Thank you for supporting us and have fun on Ripple!"
 msgstr "Grazie per aver donato e divertiti su Ripple!"
@@ -1817,9 +1796,6 @@ msgstr ""
 "di creare un token API da questa pagina, stai all'erta e crea il token "
 "soltanto se ti fidi davvero del proprietario dell'applicazione.</b>"
 
-msgid "and PP for osu!standard and osu!mania"
-msgstr "e PP per osu!standard e osu!mania"
-
 # help.html
 msgid ""
 "If you need to get in touch with our support team (our Community Managers), "
@@ -1893,22 +1869,113 @@ msgid "I have read and understood everything on this page."
 msgstr "Ho letto e capito tutto ciò che è contenuto su questa pagina."
 
 msgid "The 'Ranking Criteria' are as follows:"
-msgstr ""
+msgstr "I 'Criteri di ranking' sono i seguenti:"
 
 msgid "Follow the <a href='https://osu.ppy.sh/help/wiki/Ranking_Criteria/'>Bancho Ranking Criteria</a> to some extend"
-msgstr ""
+msgstr "Segui i <a href='https://osu.ppy.sh/help/wiki/Ranking_Criteria/'>criteri di Ranking di Bancho</a> in una certa misura"
 
 msgid "No clear abuse of any systems (pp/stars)"
-msgstr ""
+msgstr "No abusi di alcun sistema (pp/stelle)"
 
 msgid "No speedup or re-upload of existing maps"
-msgstr ""
+msgstr "No versioni velocizzate o re-upload di mappe esistenti"
 
 msgid "No Jump/Stream Training Compilations"
-msgstr ""
+msgstr "No compilation di jump/stream"
 
 msgid "At least 66% Completion for 7+ Minute songs, anything else completely mapped"
-msgstr ""
+msgstr "Almeno il 66% di completamento per una canzone di 7+ minuti, altrimenti deve essere completamente mappata"
 
 msgid "Popularity does not mean rankable"
+msgstr "Popolare non vuol dire rankabile"
+
+msgid "Community"
+msgstr "Community"
+
+msgid "Multiplayer listing"
+msgstr "Lista partite multiplayer"
+
+msgid "Discord Server"
+msgstr "Server Discord"
+
+msgid "Read more"
+msgstr "Leggi di più"
+
+msgid "Connection guide"
+msgstr "Guida di connessione"
+
+msgid "Classic"
+msgstr "Classico"
+
+msgid "Relax"
+msgstr "Relax"
+
+msgid "New!"
+msgstr "Nuovo!"
+
+msgid "Total Play Time"
+msgstr "Tempo di gioco totale"
+
+msgid "<b>We have changed our custom badge system.</b> You can now use emojis as icons! Check it out!"
+msgstr "<b>Abbiamo cambiato il nostro sistema di badge personalizzati.</b> Ora puoi utilizzare le emoji come icone! Dagli un'occhiata!"
+
+msgid "Pick an emoji"
+msgstr "Scegli un'emoji"
+
+msgid "In-game settings"
+msgstr "Impostazioni in gioco"
+
+msgid "Submode"
+msgstr "Sottomodalità"
+
+msgid "In-game beatmap scoreboards display"
+msgstr "Visualizzazione classifiche beatmap nel gioco"
+
+msgid "You can also change this setting in-game with '!relax' and '!classic'"
+msgstr "Puoi anche cambiare questa imposazione dal gioco con '!relax' e '!classic'"
+
+msgid "display and order by"
+msgstr "visualizza e ordina per"
+
+msgid "You can also change this setting in-game with '!display classic pp' and '!display classic score'"
+msgstr "Puoi anche cambiare questa imposazione dal gioco con '!display classic pp' e '!display classic score'"
+
+msgid "You can also change this setting in-game with '!display relax pp' and '!display relax score'"
+msgstr "Puoi anche cambiare questa imposazione dal gioco con '!display relax pp' e '!display relax score'"
+
+msgid "Overwrite classic mode scores prioritizing..."
+msgstr "Sovrascrivi punteggi modalità classica prioritizzando..."
+
+msgid "The settings this section apply to only classic mode. Relax mode always prioritizes PP. Changing these setting is not retroactive."
+msgstr "Le imposazioni di questa sezione si applicano solo alla modalità classica. La modalità relax prioritizza sempre i PP. Cambiare queste impostazioni non è retroattivo."
+
+msgid "default"
+msgstr "predefinito"
+
+msgid "Auto !last"
+msgstr "!last automatico"
+
+# On/off
+msgid "Off"
+msgstr "Off"
+
+msgid "Chat message"
+msgstr "Messaggio in chat"
+
+msgid "Notification"
+msgstr "Notifica"
+
+msgid "Custom role name"
+msgstr "Nome del ruolo personalizzato"
+
+msgid "Colour"
+msgstr "Colore"
+
+msgid "Donor"
+msgstr "Donatore"
+
+msgid "This feature is available only to donors"
+msgstr "Questa funzionalità è disponibile soltanto per i donatori"
+
+msgid "<a href='/donate'>Acquista il donor</a> per supportarci e sbloccare questa funzionalità, e molte altre!"
 msgstr ""

@@ -6,6 +6,7 @@ import (
 	_ "image/gif"
 	_ "image/jpeg"
 	"image/png"
+	"net/http"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -50,5 +51,32 @@ func avatarSubmit(c *gin.Context) {
 		c.Error(err)
 		return
 	}
+
+	// Purge varnish cache, if enabled
+	if config.VarnishURL != "" {
+		req, err := http.NewRequest(
+			"BAN",
+			fmt.Sprintf("%s/%d", config.VarnishURL, ctx.User.ID), nil,
+		)
+		if err != nil {
+			m = errorMessage{T(c, "An error occurred.")}
+			c.Error(err)
+			return
+		}
+		resp, err := http.DefaultClient.Do(req)
+		if err != nil || resp.StatusCode != 200 {
+			m = errorMessage{T(c, "We were not able to purge the avatars cache.")}
+			c.Error(err)
+			return
+		}
+	}
+
+	// Purge local avatars cache
+	sess := getSession(c)
+	ctx.AvatarsVersion++
+	sess.Set("avatars_version", ctx.AvatarsVersion)
+	sess.Save()
+	c.Set("context", ctx)
+
 	m = successMessage{T(c, "Your avatar was successfully changed. It may take some time to properly update. To force a cache refresh, you can use CTRL+F5.")}
 }

@@ -70,9 +70,8 @@
 			// defaults to 0
 			var currentMode = {{ atoi (.Gin.Query "mode") }};
 			var currentRelax = {{ atoi (.Gin.Query "relax") }};
-			var currentModeChanged = false;
 			var favMode = parseInt({{ $favModeRaw.favourite_mode }}) || 0;
-			var favRelax = parseInt({{ if (.Gin.Query "relax") }}{{ .Gin.Query "relax" }}{{ else }}{{ $favRelax }}{{ end }}) || 0;
+			var favRelax = parseInt({{ $favRelax }}) || 0;
 		</script>
 
 		<div class="ui four item menu" id="mode-menu">
@@ -82,8 +81,8 @@
 		</div>
 
 		<div class="ui two item menu" id="relax-menu">
-			<a class="item" data-relax="0">Classic</a>
-			<a class="item" data-relax="1">Relax <div class="ui pink horizontal mini label">New!</div></a>
+			<a class="item" data-relax="0">{{ .T "Classic" }}</a>
+			<a class="item" data-relax="1">{{ .T "Relax" }} <div class="ui pink horizontal mini label">{{ .T "New!" }}</div></a>
 		</div>
 
 		<table class="ui sortable fixed table">

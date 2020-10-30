@@ -259,6 +259,15 @@ var funcMap = template.FuncMap{
 			"osu!mania",
 		}
 	},
+	// dbModes returns an array containing all the modes (in their string db representation).
+	"dbModes": func() []string {
+		return []string{
+			"std",
+			"taiko",
+			"ctb",
+			"mania",
+		}
+	},
 	// _or is like or, but has only false and nil as its "falsey" values
 	"_or": func(args ...interface{}) interface{} {
 		for _, a := range args {
@@ -398,6 +407,16 @@ var funcMap = template.FuncMap{
 	"styles": func() []string {
 		return playstyle.Styles[:]
 	},
+	"sanestyles": func() []string {
+		s := []string{}
+		for i, v := range playstyle.Styles {
+			if i >= 4 && i <= 8 {
+				continue
+			}
+			s = append(s, v)
+		}
+		return s
+	},
 	// shift shifts n1 by n2
 	"shift": func(n1, n2 int) int {
 		return n1 << uint(n2)
@@ -421,8 +440,25 @@ var funcMap = template.FuncMap{
 	// systemSetting retrieves some information from the table system_settings
 	"systemSettings": systemSettings,
 	// authCodeURL gets the auth code for discord
-	"authCodeURL": func(u int) string {
-		return getDiscord().AuthCodeURL(mustCSRFGenerate(u))
+	"authCodeURL": func(u int) *string {
+		d, err := http.Get(
+			fmt.Sprintf(
+				config.OldFrontend+"/discord/oauth.php?k=%s&uid=%d",
+				config.DonorBotSecret, u,
+			),
+		)
+		if err != nil {
+			return nil
+		}
+		x := make(map[string]interface{})
+		data, _ := ioutil.ReadAll(d.Body)
+		json.Unmarshal(data, &x)
+		var s string
+		var ok bool
+		if s, ok = x["url"].(string); !ok {
+			return nil
+		}
+		return &s
 	},
 	// perc returns a percentage
 	"perc": func(i, total float64) string {
@@ -499,9 +535,12 @@ var funcMap = template.FuncMap{
 		var now = time.Now()
 		return now.Month() == time.December || now.Month() == time.January
 	},
+	"avatarURL": func(ctx context, userID int) string {
+		return fmt.Sprintf("%s/%d?%d", config.AvatarURL, userID, ctx.AvatarsVersion)
+	},
 }
 
-var localeLanguages = []string{"de", "pl", "it", "es", "ru", "fr", "nl", "ro", "fi", "sv", "vi", "ko"}
+var localeLanguages = []string{"de", "pl", "it", "es", "ru", "fr", "nl", "ro", "fi", "sv", "vi", "ko", "th", "zh"}
 
 var hanayoStarted = time.Now().UnixNano()
 
@@ -616,4 +655,6 @@ var languageInformation = []langInfo{
 	{"Svenska", "se", "sv"},
 	{"Tiếng Việt Nam", "vn", "vi"},
 	{"한국어", "kr", "ko"},
+	{"ภาษาไทย", "th", "th"},
+	{"简体中文", "cn", "zh"},
 }
