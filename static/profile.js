@@ -83,7 +83,7 @@ function formatOnlineStatusBeatmap(a) {
 
 function loadOnlineStatus() {
 	// load in-game status through delta api
-	banchoAPI('clients/' + userID, {}, function(resp) {
+	 banchoAPI('clients/' + userID, {}, function(resp) {
 
 		var client = null;
 		resp.clients.forEach(function (el) {

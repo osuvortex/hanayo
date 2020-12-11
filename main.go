@@ -191,6 +191,7 @@ func main() {
 
 	// even if it's not release, we say that it's release
 	// so that gin doesn't spam
+	// gin.SetMode(gin.ReleaseMode)
 	gin.SetMode(gin.ReleaseMode)
 
 	gobRegisters := []interface{}{

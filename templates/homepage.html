@@ -42,7 +42,7 @@ KyutGrill=homepage2.jpg
 					{{ $.T "Register" }}
 				</a>
 			{{ end }}
-			<a class="ui pink button" href="https://switcher.ripple.moe">
+			<a class="ui pink button" href="https://vortex-tds.studio/osu/vss-5.zip">
 				<i class="download icon"></i>
 				{{ $.T "Download the server switcher" }}
 			</a>
@@ -69,8 +69,8 @@ KyutGrill=homepage2.jpg
 			{{ range $i, $v := .posts }}
 				<div class="ui segment">
 					<h1 class="ui header no top margin">
-						<a href="https://blog.ripple.moe/{{ $v.unique_slug }}" class="inherit">{{ html $v.title }}</a>
-						<div class="sub header"><a href="https://blog.ripple.moe/@{{ $v.creator.username }}">{{ $v.creator.name }}</a>, {{ time $v.created_at }}</div>
+						<a href="https://blog.vortex-tds.studio/{{ $v.unique_slug }}" class="inherit">{{ html $v.title }}</a>
+						<div class="sub header"><a href="https://blog.vortex-tds.studio/@{{ $v.creator.username }}">{{ $v.creator.name }}</a>, {{ time $v.created_at }}</div>
 					</h1>
 					<p>
 						{{ $v.snippet }}
@@ -78,7 +78,7 @@ KyutGrill=homepage2.jpg
 				</div>
 			{{ end }}
 			<div class="ui bottom attached pink center aligned segment">
-				<a class="ui pink button" href="https://blog.ripple.moe">
+				<a class="ui pink button" href="https://blog.vortex-tds.studio">
 					<i class="book icon"></i>
 					{{ $.T "Read more" }}
 				</a>

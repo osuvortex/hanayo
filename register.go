@@ -120,9 +120,9 @@ func registerSubmit(c *gin.Context) {
 	}
 	lid, _ := res.LastInsertId()
 
+        db.Exec("INSERT INTO `users_stats_relax`(id, username, user_color, user_style, ranked_score_std, playcount_std, total_score_std, ranked_score_taiko, playcount_taiko, total_score_taiko, ranked_score_ctb, playcount_ctb, total_score_ctb, ranked_score_mania, playcount_mania, total_score_mania) VALUES (?, ?, 'black', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);", lid, username)
 	db.Exec("INSERT INTO `users_stats`(id, username, user_color, user_style, ranked_score_std, playcount_std, total_score_std, ranked_score_taiko, playcount_taiko, total_score_taiko, ranked_score_ctb, playcount_ctb, total_score_ctb, ranked_score_mania, playcount_mania, total_score_mania) VALUES (?, ?, 'black', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);", lid, username)
-	db.Exec("INSERT INTO `users_stats_relax` (id) VALUES (?)", lid)
-	db.Exec("INSERT INTO `users_preferences` (id) VALUES (?)", lid)
+	db.Exec("INSERT INTO `users_preferences`(id, score_overwrite_std, score_overwrite_taiko, score_overwrite_mania, score_overwrite_ctb, scoreboard_display_classic, scoreboard_display_relax, auto_last_classic, auto_last_relax) VALUES (?, 0, 0, 0, 0, 0, 0, 0, 0);", lid)
 
 	schiavo.CMs.Send(fmt.Sprintf("User (**%s** | %s) registered from %s", username, c.PostForm("email"), clientIP(c)))
 

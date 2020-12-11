@@ -82,11 +82,11 @@ AdditionalJS=/static/jquery.lsxemojipicker.js
 								</div>
 							</div>
 							<div class="column">
-								<p><button id="memoji" class="ui button fluid">{{ .T "Pick an emoji" }}</button></p>
-								<p><input type="text" name="custom_badge.icon" hidden
+								<p><input type="text" name="custom_badge.icon"
+										placeholder="{{ .T ":flushed:" }}"
 										value="{{ $d.custom_badge.icon }}"></p>
 								<p><input type="text" name="custom_badge.name"
-										placeholder="{{ .T "Dinosaur, oompa-loompa, cool guy..." }}"
+										placeholder="{{ .T "727 Peppy Points" }}"
 										value="{{ $d.custom_badge.name }}"></p>
 							</div>
 						</div>
