@@ -82,79 +82,59 @@ function formatOnlineStatusBeatmap(a) {
 }
 
 function loadOnlineStatus() {
-	// load in-game status through delta api
-	 banchoAPI('clients/' + userID, {}, function(resp) {
-
-		var client = null;
-		resp.clients.forEach(function (el) {
-			if (el.type === 0 || client === null) {
-				client = el
-			}
-		});
-		if (client !== null) {
+	// load in-game status through peppy api
+	$.getJSON(hanayoConf.banchoAPI + "/api/v1/userActions?u=" + userID,
+	function (data) {
+		if (data.action.online == 1) {
 			var icon;
 			var text;
-			switch (client.type) {
+			switch(data.action.id) {
 				case 1: {
-					// irc
-					icon = 'blue comment';
-					text = 'Online through IRC';
-				}; break;
-				case 0: {
-					// bancho
-					switch (client.action.id) {
-						case 1: {
-							icon = 'bed';
-							text = 'AFK';
-						}; break
-						case 2: {
-							icon = 'teal play circle';
-							text = "Playing " + formatOnlineStatusBeatmap(client.action);
-						}; break
-						case 3: {
-							icon = 'orange paint brush';
-							text = "Editing " + formatOnlineStatusBeatmap(client.action);
-						}; break;
-						case 4: {
-							icon = 'violet paint brush';
-							text = "Modding " + formatOnlineStatusBeatmap(client.action);
-						}; break;
-						case 5: {
-							icon = 'olive gamepad';
-							text = "In Multiplayer Match";
-						}; break;
-						case 12: {
-							icon = 'green play circle';
-							text = "Multiplaying " + formatOnlineStatusBeatmap(client.action);
-						}; break;
-						case 11: {
-							icon = 'orange map signs';
-							text = "In Multiplayer Lobby";
-						}; break;
-						case 6: {
-							icon = 'pink eye';
-							text = "Spectating " + formatOnlineStatusBeatmap(client.action);
-						}; break;
-						default: {
-							icon = 'green circle';
-							text = 'Online';
-						};
-					}
-				}; break;
-				case 2: {
-					// ws
-					icon = 'green cogs';
-					text = 'Online';
+					icon = 'bed';
+					text = 'AFK';
 				}; break
+				case 2: {
+					icon = 'teal play circle';
+					text = "Playing " + formatOnlineStatusBeatmap(data.action);
+				}; break
+				case 3: {
+					icon = 'orange paint brush';
+					text = "Editing " + formatOnlineStatusBeatmap(data.action);
+				}; break;
+				case 4: {
+					icon = 'violet paint brush';
+					text = "Modding " + formatOnlineStatusBeatmap(data.action);
+				}; break;
+				case 5: {
+					icon = 'olive gamepad';
+					text = "In Multiplayer Match";
+				}; break;
+				case 12: {
+					icon = 'green play circle';
+					text = "Multiplaying " + formatOnlineStatusBeatmap(data.action);
+				}; break;
+				case 11: {
+					icon = 'orange map signs';
+					text = "In Multiplayer Lobby";
+				}; break;
+				case 6: {
+					icon = 'pink eye';
+					text = "Spectating " + formatOnlineStatusBeatmap(data.action);
+				}; break;
+				default: {
+					icon = 'green circle';
+					text = 'Online';
+				}; break;
+
 			}
 		} else {
-			// offline
 			icon = 'circle';
 			text = 'Offline'
-		}
+		}		
+
 		$('#online>.icon').attr('class', icon + ' icon');
 		$('#online>span').html(text);
-	});
+	})
 }
 
 function loadMostPlayedBeatmaps(mode, increment) {
